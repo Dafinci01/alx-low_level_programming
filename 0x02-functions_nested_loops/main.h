@@ -1,7 +1,13 @@
-  1 #ifndef MAIN_H
-  2 #define MAIN_H
-  3
-  4 int _putchar(char c);
-  5
-  6 #endif
-
+  1 int _putchar(char c);
+  2 void print_alphabet(void);
+  3 void print_alphabet_x10(void);
+  4 int _islower(int c);
+  5 int _isalpha(int c);
+  6 int print_sign(int n);
+  7 int _abs(int);
+  8 int print_last_digit(int);
+  9 void jack_bauer(void);
+ 10 void times_table(void);
+ 12 int add(int, int);
+ 13 void print_to_98(int n);
+ 14 void print_times_table(int n);
