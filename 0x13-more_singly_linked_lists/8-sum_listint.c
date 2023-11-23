@@ -17,5 +17,5 @@ while (head)
 add += head->n;
 head = head->next;
 }
-eturn (add);
+return (add);
 }
