@@ -10,18 +10,15 @@
  */
 void error_file(int file_from, int file_to, char *argv[])
 {
-
-//check if the source file qas opened usuccefully
 	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);//exit with code 98 if the source file is not open 
+		exit(98);
 	}
-//check if destination file is opened succesfully
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);//exit with code 99 if not and file cannt be written to, response 
+		exit(99);
 	}
 }
 
@@ -33,16 +30,16 @@ void error_file(int file_from, int file_to, char *argv[])
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, err_close;//file descriptor and error code for closing
-	ssize_t nchars, nwr;// number of charaacters read and written
-	char buf[1024];// buffer to hold data read from the source file 
-// Check if the number of argument is correct 
+	int file_from, file_to, err_close;
+	ssize_t nchars, nwr;
+	char buf[1024];
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
-		exit(97);//exit with code 97 for incorrevt usage 
+		exit(97);
 	}
-//open souirce file for reaingh
+
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error_file(file_from, file_to, argv);
